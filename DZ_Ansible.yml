@@ -54,4 +54,4 @@
       synchronize:
         src: /tmp/war-web-project/target/wwp-1.0.0.war
         dest: /var/lib/tomcat9/webapps/wwp-1.0.0.war
-      delegate_to: 158.160.14.1
+      delegate_to: 158.160.0.164
