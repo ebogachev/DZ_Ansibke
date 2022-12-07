@@ -31,7 +31,7 @@
       chdir: /tmp/war-web-project
       
 - name: Install Tomcat and launch project
-  hosts: launch
+  hosts: prod
   become: yes
   
   tasks:
@@ -46,7 +46,7 @@
         state: started
 
 - name: Copy war file
-  hosts: launch
+  hosts: prod
   become: yes
   
   tasks:
