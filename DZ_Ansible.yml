@@ -19,3 +19,9 @@
      name: git
      state: present
 
+- name: Clone git project
+  ansible.builtin.git:
+    repo: https://github.com/koddas/war-web-project.git
+    dest: /tmp/war-web-project
+    single_branch: yes
+    version: master
