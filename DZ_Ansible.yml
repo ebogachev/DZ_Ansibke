@@ -46,7 +46,7 @@
         state: started
 
 - name: Copy war file
-  hosts: web
+  hosts: db
   become: yes
   
   tasks:
