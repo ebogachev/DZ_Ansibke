@@ -1,6 +1,6 @@
 ---
 - name: Install OpenJDK, Maven, Git and Build project
-  hosts: web
+  hosts: build
   become: yes
 
   tasks:
@@ -31,7 +31,7 @@
       chdir: /tmp/war-web-project
       
 - name: Install Tomcat and launch project
-  hosts: db
+  hosts: launch
   become: yes
   
   tasks:
@@ -46,7 +46,7 @@
         state: started
 
 - name: Copy war file
-  hosts: db
+  hosts: launch
   become: yes
   
   tasks:
