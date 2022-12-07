@@ -23,5 +23,4 @@
     git:
      repo: https://github.com/koddas/war-web-project.git
      dest: /tmp/war-web-project
-     single_branch: yes
-     version: master
+     clone: yes
