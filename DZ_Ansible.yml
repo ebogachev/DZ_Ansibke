@@ -4,17 +4,17 @@
   become: yes
 
   tasks:
-  - name: OpenJDK
+  - name: Install OpenJDK
     apt:
      name: default-jdk
      state: present
 
-  - name: Maven
+  - name: Install Maven
     apt:
      name: maven
      state: present
      
-  - name: Git
+  - name: Install Git
     apt:
      name: git
      state: present
@@ -29,3 +29,18 @@
     shell: mvn package
     args:
       chdir: /tmp/war-web-project
+      
+- name: Install Tomcat and launch project
+  hosts: db
+  become: yes
+  
+  tasks:
+    - name: Install tomcat
+      apt:
+        name: tomcat9
+        state: present
+        
+    - name: Ensure tomcat service is started
+      service:
+        name: tomcat9
+        state: started
