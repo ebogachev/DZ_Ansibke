@@ -27,4 +27,5 @@
   
   - name: Build project
     shell: mvn package
-    chdir: /tmp/war-web-project
+    args:
+      chdir: /tmp/war-web-project
