@@ -1,36 +1,21 @@
 ---
-- name: install nginx
+- name: Install OpenJDK, Maven, Git
   hosts: web
   become: yes
 
   tasks:
-  - name: Ensure nginx package is present
+  - name: OpenJDK
     apt:
-     name: nginx
+     name: default-jdk
      state: present
 
-  - name: Ensure index.html is present
-    copy:
-     stc: index.html
-     dest: /var/www/html
-
-  - name: Ensure nginx service is started
-    service:
-     name: nhinx
-     state: started
-
-- name: install db
-  hosts: db
-  become: yes
-
-  tasks:
-  - name: Ensure postgresql package is present
+  - name: Maven
     apt:
-     name: postgresql
+     name: maven
      state: present
-
-  - name: Ensure postgresql package is present
-    service:
-     name: postgresql
-     state: started
+     
+  - name: Git
+    apt:
+     name: git
+     state: present
 
