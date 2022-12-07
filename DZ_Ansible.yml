@@ -1,5 +1,5 @@
 ---
-- name: Install OpenJDK, Maven, Git
+- name: Install OpenJDK, Maven, Git and Build project
   hosts: web
   become: yes
 
@@ -24,3 +24,9 @@
      repo: https://github.com/koddas/war-web-project.git
      dest: /tmp/war-web-project
      clone: yes
+  
+  - name: Build project
+    maven:
+      shell: mvn package
+      args:
+        chdir: /tmp/war-web-project
