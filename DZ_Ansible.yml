@@ -51,7 +51,8 @@
   
   tasks:
     - name: Send file to remote
-      synchronize:
+      copy:
         src: /tmp/war-web-project/target/wwp-1.0.0.war
         dest: /var/lib/tomcat9/webapps/wwp-1.0.0.war
-      delegate_to: 158.160.0.164
+        delegate_to: 158.160.0.164
+        tags: fetch
