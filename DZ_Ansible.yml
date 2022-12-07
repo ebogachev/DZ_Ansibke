@@ -26,7 +26,5 @@
      clone: yes
   
   - name: Build project
-    maven:
-      shell: mvn package
-      args:
-      	chdir: /tmp/war-web-project
+    shell: mvn package
+    chdir: /tmp/war-web-project
